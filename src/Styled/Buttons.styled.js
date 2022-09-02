@@ -26,3 +26,10 @@ export const PrimaryButton = styled(defaultButton)`
 export const PrimaryButtonOutlined = styled(defaultButton)`
   border: 1px solid black;
 `;
+
+export const SecondButtonIcon = styled(PrimaryButton)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px 10px;
+`;

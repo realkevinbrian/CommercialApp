@@ -1,10 +1,12 @@
+import SideMenu from "./Components/AppBar/SideBar";
+import Topbar from "./Components/AppBar/Topbar";
 import Login from "./Pages/Login";
 
 function App() {
   return (
     <div className="App">
-      {/* <h1>React App</h1> */}
-      <Login />
+      <Topbar />
+      <SideMenu />
     </div>
   );
 }
