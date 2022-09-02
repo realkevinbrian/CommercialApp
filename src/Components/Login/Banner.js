@@ -2,15 +2,23 @@
  * Side Banner on login Page
  */
 
-import React from 'react'
-import { LoginBanner } from '../../Styled/Login.Styled'
+import React from "react";
+import { LoginBanner } from "../../Styled/Login.Styled";
+import sample from "../../Assets/images/loginBanner.jpg";
+import logo from "../../Assets/images/logo.gif";
 
 function Banner() {
   return (
     <LoginBanner>
-        <img src={{}} alt="Media"/>
+      <img id="banner" src={sample} alt="Media" />
+      <div id="overlay">
+        <div id="overlay__content">
+          <img src={logo} alt="Media" />
+          <h3>Bem vindo a Agence Commerce App</h3>
+        </div>
+      </div>
     </LoginBanner>
-  )
+  );
 }
 
-export default Banner
+export default Banner;
