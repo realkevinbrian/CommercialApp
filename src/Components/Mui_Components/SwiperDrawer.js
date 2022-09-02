@@ -1,3 +1,7 @@
+/***
+ * Swipeable Drawer Reusable Component
+ */
+
 import { Paper, SwipeableDrawer } from '@mui/material'
 import React from 'react'
 

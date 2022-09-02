@@ -23,6 +23,9 @@ import SwiperDrawer from "../Mui_Components/SwiperDrawer";
 import logo from "../../Assets/images/logo.gif";
 
 function SideMenu() {
+  /**
+   * List of Side menu link
+   */
   const List = [
     {
       title: "Agence",
