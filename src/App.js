@@ -1,10 +1,17 @@
-import SearchBox from "./Components/Inputs/SearchBox";
+import React from 'react';
+import {Routes, Route} from "react-router-dom";
+import Login from "./Pages/Login";
+import Home from './Pages/Home';
 
 function App() {
   return (
-    <div className="App">
-    </div>
-  );
+    <React.Fragment>
+      <Routes>
+        <Route path='/*' element={<Home/>}/>
+        <Route path='/login' exact element={<Login/>}/>
+      </Routes>
+    </React.Fragment>
+  )
 }
 
-export default App;
+export default App

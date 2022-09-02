@@ -5,12 +5,15 @@ import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import { ThemeProvider } from "styled-components";
 import theme from "./Theme/theme";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

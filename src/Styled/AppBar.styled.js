@@ -10,6 +10,7 @@ export const TopBarContainer = styled.div`
   justify-content: space-between;
   padding: 1rem;
   box-shadow: 1px 1px 1px 1px #d2d2d2;
+  background-color: ${({theme})=>theme.colors.white};
 
   //button inside
   button{

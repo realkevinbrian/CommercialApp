@@ -42,6 +42,31 @@ export const SearchBoxContainer = styled.div`
   button {
     background-color: ${({ theme }) => theme.colors.raisinBlack};
     background-color: ${({ theme }) => theme.colors.white};
-    
+  }
+`;
+
+/***
+ * Date pick
+ */
+
+export const InputDateContainer = styled.div`
+  border: 1px solid ${({ theme }) => theme.colors.raisinBlack};
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  gap: 5px;
+
+  > div {
+    input[type="date"] {
+      border: 1px solid ${({ theme }) => theme.colors.raisinBlack};
+      padding: 5px 10px;
+      margin: 0 5px;
+      background-color: ${({ theme }) => theme.colors.white};
+
+      &:nth-child(1) {
+        background-color: ${({ theme }) => theme.colors.raisinBlack};
+        color: ${({ theme }) => theme.colors.white};
+      }
+    }
   }
 `;

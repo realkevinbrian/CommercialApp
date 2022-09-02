@@ -7,7 +7,7 @@ function SearchBox() {
   return (
     <SearchBoxContainer>
       <InputText type="search" placeholder="Pesquise por nome" />
-      <IconButton>
+      <IconButton type={"submit"}>
         <Search />
       </IconButton>
     </SearchBoxContainer>
