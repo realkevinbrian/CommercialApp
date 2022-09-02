@@ -14,7 +14,7 @@ export const InputLabel = styled.label`
   flex-direction: row;
   align-items: center;
 `;
-export const InputText = styled.div`
+export const InputText = styled.input`
   display: flex;
   flex-direction: column;
   align-items: center;
