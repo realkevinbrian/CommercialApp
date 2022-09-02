@@ -22,7 +22,7 @@ function index() {
         <TableHead className="TableHead">
           <TableRow>
             <TableCell>
-              <h5>Nomes</h5>
+              <h5>Nomes de Consultores</h5>
             </TableCell>
 
             <TableCell align="right">
@@ -33,7 +33,7 @@ function index() {
 
         <TableBody>
           {Array.from(data).map((item) => (
-            <TableRow>
+            <TableRow key={item.id}>
               <TableCell>{item.name}</TableCell>
               <TableCell align="right">
                 <Checkbox />

@@ -5,9 +5,16 @@ import { TopBarContainer } from "../../Styled/AppBar.styled";
 import { SecondButtonIcon } from "../../Styled/Buttons.styled";
 import logo from "../../Assets/images/logo.gif";
 import SideBar from "../AppBar/SideBar";
+import { useNavigate } from "react-router-dom";
 
 function Topbar() {
   const [Open, setOpen] = useState(false);
+  const navigate = useNavigate();
+
+  function handleLogout() {
+    localStorage.removeItem("userInfo");
+    navigate("/login");
+  }
 
   return (
     <React.Fragment>
@@ -19,7 +26,7 @@ function Topbar() {
 
         <img src={logo} alt="officialLogo" />
 
-        <SecondButtonIcon>
+        <SecondButtonIcon onClick={() => handleLogout()}>
           <Icon>
             <LogoutOutlined />
           </Icon>

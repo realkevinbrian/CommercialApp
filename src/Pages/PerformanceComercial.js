@@ -21,8 +21,8 @@ import { PerformanceTableWrapper } from "../Styled/Table.Styled";
 
 function PerformanceComercial() {
   const buttons = [
-    { title: "Clientes", className: "activeResult" },
-    { title: "Consultores" },
+    { title: "Por Clientes", className: "activeResult" },
+    { title: "Por Consultores" },
   ];
 
   //active button functionality
@@ -52,6 +52,10 @@ function PerformanceComercial() {
       </PerformanceComercialHeader>
 
       <PerformanceComercialAction>
+        {/* <div className="ActionHead">
+          <small>Mostrando Clientes</small>
+        </div> */}
+
         <div className="ActionBody">
           <SearchBox />
           <InputDate />

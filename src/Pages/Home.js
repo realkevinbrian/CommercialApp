@@ -3,10 +3,12 @@ import { Routes, Route } from "react-router-dom";
 import Topbar from "../Components/AppBar/Topbar";
 import PerformanceComercial from "./PerformanceComercial";
 import { HomeContainer } from "../Styled/Home.styled";
+import ProtectedRoutes from "../Components/ProtectedRoutes";
 
 function Home() {
   return (
     <React.Fragment>
+      <ProtectedRoutes>
       <HomeContainer>
         <Topbar />
         <Routes>
@@ -18,6 +20,7 @@ function Home() {
           <Route path="comercial" element={<h1>Administrativa</h1>} />
         </Routes>
       </HomeContainer>
+      </ProtectedRoutes>
     </React.Fragment>
   );
 }
