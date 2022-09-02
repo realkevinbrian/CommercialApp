@@ -14,7 +14,7 @@ function Banner() {
       <div id="overlay">
         <div id="overlay__content">
           <img src={logo} alt="Media" />
-          <h3>Bem vindo a Agence Commerce App</h3>
+          <h5>Bem vindo a Agence Commerce App</h5>
         </div>
       </div>
     </LoginBanner>

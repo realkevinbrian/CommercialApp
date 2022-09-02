@@ -6,15 +6,23 @@
 import styled from "styled-components";
 
 export const defaultButton = styled.button`
-  display: flex;
-  flex-direction: row;
   align-items: center;
   border: 1px solid transparent;
   background-color: transparent;
+  padding: 10px;
+  cursor: pointer;
 `;
 
-export const primaryButton = styled(defaultButton)``;
+export const PrimaryButton = styled(defaultButton)`
+  background-color: ${({ theme }) => theme.colors.trueBlue};
+  color: ${({ theme }) => theme.colors.white};
+  transition: all 0.5s linear;
 
-export const primaryButtonOutlined = styled(defaultButton)`
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.raisinBlack};
+  }
+`;
+
+export const PrimaryButtonOutlined = styled(defaultButton)`
   border: 1px solid black;
 `;
