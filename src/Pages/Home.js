@@ -9,9 +9,8 @@ function Home() {
     <React.Fragment>
       <HomeContainer>
         <Topbar />
-        {/* <SideBar/> */}
         <Routes>
-          <Route index element={<h1>Comercial</h1>} />
+          <Route index element={<PerformanceComercial />} />
           <Route path="desempenho" element={<PerformanceComercial />} />
           <Route path="agence" element={<h2>Agence</h2>} />
           <Route path="projectos" element={<h2>Projectos</h2>} />

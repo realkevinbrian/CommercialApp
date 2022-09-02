@@ -52,7 +52,8 @@ export const SearchBoxContainer = styled.div`
 export const InputDateContainer = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.raisinBlack};
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  flex-direction: row;
   padding: 5px;
   gap: 5px;
 

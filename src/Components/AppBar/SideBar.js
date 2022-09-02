@@ -21,8 +21,9 @@ import {
 } from "../../Styled/SideBar.styled";
 import SwiperDrawer from "../Mui_Components/SwiperDrawer";
 import logo from "../../Assets/images/logo.gif";
+import { useNavigate } from "react-router-dom";
 
-function SideMenu() {
+function SideMenu(props) {
   /**
    * List of Side menu link
    */
@@ -39,20 +40,21 @@ function SideMenu() {
       icon: <AdminPanelSettingsOutlined />,
       link: "/administrativo",
     },
-    { title: "Comercial", icon: <Person2Outlined />, link: "/Comercial" },
-    { title: "Financeiro", icon: <NoteAlt />, link: "/Financeiro" },
+    { title: "Comercial", icon: <Person2Outlined />, link: "/desempenho" },
+    { title: "Financeiro", icon: <NoteAlt />, link: "/financeiro" },
     { title: "Usuario", icon: <CardMembership />, link: "/usuario" },
   ];
 
   //create a function to handleNavigate
-  const handleNavigate = ({ self }) => {
+  const navigate = useNavigate();
+  const handleNavigate = ({ self, link }) => {
+    props.setOpen(false);
+    navigate(link);
     /**
      * Implementing Button Active state Functionality
      */
     //get current
     let current = document.getElementsByClassName("activeLink");
-    console.log(current.length);
-
     //remove class Name on current
     if (current.length > 0) {
       current[0].className = current[0].className.replace("activeLink", "");
@@ -60,11 +62,12 @@ function SideMenu() {
     //add to the clicked target
     self.currentTarget.className += " activeLink";
   };
+
   return (
-    <SwiperDrawer state={true}>
+    <SwiperDrawer state={props.state} setOpen={props.setOpen}>
       <SideBarContainer>
         <SideBarTitle>
-          <IconButton>
+          <IconButton onClick={() => props.setOpen(false)}>
             <CloseOutlined />
           </IconButton>
           <img className="logo" src={logo} alt="logoOfficial" />
@@ -75,7 +78,7 @@ function SideMenu() {
             <SideBarLink
               key={item.title}
               className={item.className}
-              onClick={(self) => handleNavigate({ self })}
+              onClick={(self) => handleNavigate({ self, link: item.link })}
             >
               <Icon>{item.icon}</Icon>
               <small>{item.title}</small>

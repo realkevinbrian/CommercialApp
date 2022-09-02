@@ -59,6 +59,16 @@ export const PerformanceComercialAction = styled.div`
       font-weight: bold;
     }
 
+  }
+
+  //ActionBody
+  .ActionBody {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0.5rem 1rem;
+    align-items: center;
+
     > .groupedButtons {
       display: flex;
       flex-direction: row;
@@ -69,15 +79,6 @@ export const PerformanceComercialAction = styled.div`
         gap: 10px;
       }
     }
-  }
-
-  //ActionBody
-  .ActionBody {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: 0.5rem 1rem;
-    align-items: center;
   }
 `;
 export const PerformanceComercialBody = styled.div``;

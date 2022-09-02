@@ -16,6 +16,8 @@ import {
 } from "../Styled/PerformanceComercial.styled";
 import SearchBox from "../Components/Inputs/SearchBox";
 import InputDate from "../Components/Inputs/InputDate";
+import Table from "../Components/Table";
+import { PerformanceTableWrapper } from "../Styled/Table.Styled";
 
 function PerformanceComercial() {
   const buttons = [
@@ -50,9 +52,9 @@ function PerformanceComercial() {
       </PerformanceComercialHeader>
 
       <PerformanceComercialAction>
-        <div className="ActionHead">
-          <small>Mostrando Clientes</small>
-
+        <div className="ActionBody">
+          <SearchBox />
+          <InputDate />
           <div className="groupedButtons">
             <SecondButtonIcon>
               <Icon>
@@ -76,14 +78,13 @@ function PerformanceComercial() {
             </SecondButtonIcon>
           </div>
         </div>
-
-        <div className="ActionBody">
-          <SearchBox />
-          <InputDate />
-        </div>
       </PerformanceComercialAction>
 
-      <PerformanceComercialBody></PerformanceComercialBody>
+      <PerformanceComercialBody>
+        <PerformanceTableWrapper>
+          <Table />
+        </PerformanceTableWrapper>
+      </PerformanceComercialBody>
     </PerformanceComercialContainer>
   );
 }
