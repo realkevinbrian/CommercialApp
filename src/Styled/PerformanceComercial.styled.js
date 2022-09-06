@@ -5,7 +5,6 @@
 import styled from "styled-components";
 
 export const PerformanceComercialContainer = styled.div`
-  height: 100vh;
   margin: 2rem;
   background-color: ${({ theme }) => theme.colors.white};
 `;
@@ -58,7 +57,6 @@ export const PerformanceComercialAction = styled.div`
       color: white;
       font-weight: bold;
     }
-
   }
 
   //ActionBody
@@ -81,4 +79,7 @@ export const PerformanceComercialAction = styled.div`
     }
   }
 `;
-export const PerformanceComercialBody = styled.div``;
+export const PerformanceComercialBody = styled.div`
+  flex: 1;
+  padding: 4rem 0;
+`;

@@ -1,23 +1,20 @@
 import {
   BarChartOutlined,
   LocalPizzaOutlined,
-  PieChartOutline,
-  Report,
+  PieChartOutline
 } from "@mui/icons-material";
-import { CardMedia, Icon } from "@mui/material";
+import { Icon } from "@mui/material";
 import React from "react";
-import { PieChart } from "recharts";
-import { PrimaryButton, SecondButtonIcon } from "../Styled/Buttons.styled";
+import InputDate from "../Components/Inputs/InputDate";
+import SearchBox from "../Components/Inputs/SearchBox";
+import { SecondButtonIcon } from "../Styled/Buttons.styled";
 import {
   PerformanceComercialAction,
   PerformanceComercialBody,
   PerformanceComercialContainer,
-  PerformanceComercialHeader,
+  PerformanceComercialHeader
 } from "../Styled/PerformanceComercial.styled";
-import SearchBox from "../Components/Inputs/SearchBox";
-import InputDate from "../Components/Inputs/InputDate";
-import Table from "../Components/Table";
-import { PerformanceTableWrapper } from "../Styled/Table.Styled";
+import TransferList from "../Components/TransferList";
 
 function PerformanceComercial() {
   const buttons = [
@@ -85,9 +82,7 @@ function PerformanceComercial() {
       </PerformanceComercialAction>
 
       <PerformanceComercialBody>
-        <PerformanceTableWrapper>
-          <Table />
-        </PerformanceTableWrapper>
+        <TransferList/>
       </PerformanceComercialBody>
     </PerformanceComercialContainer>
   );
