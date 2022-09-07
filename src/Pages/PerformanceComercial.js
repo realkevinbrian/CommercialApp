@@ -1,7 +1,7 @@
 import {
   BarChartOutlined,
   LocalPizzaOutlined,
-  PieChartOutline
+  PieChartOutline,
 } from "@mui/icons-material";
 import { Icon } from "@mui/material";
 import React from "react";
@@ -12,9 +12,10 @@ import {
   PerformanceComercialAction,
   PerformanceComercialBody,
   PerformanceComercialContainer,
-  PerformanceComercialHeader
+  PerformanceComercialHeader,
 } from "../Styled/PerformanceComercial.styled";
 import TransferList from "../Components/TransferList";
+import { TransferListContext } from "../Context/TransferListContext";
 
 function PerformanceComercial() {
   const buttons = [
@@ -34,57 +35,67 @@ function PerformanceComercial() {
     self.currentTarget.className += " activeResult";
   }
 
-  return (
-    <PerformanceComercialContainer>
-      <PerformanceComercialHeader>
-        {Array.from(buttons).map((item) => (
-          <button
-            key={item.title}
-            className={item.className}
-            onClick={(self) => handleChange({ self })}
-          >
-            {item.title}
-          </button>
-        ))}
-      </PerformanceComercialHeader>
+  const data = [
+    {name : "Kevin Brian", id : 1},
+    {name : "Reis", id : 2},
+    {name : "Kito", id : 3},
+    {name : "Melaine", id : 4},
+    {name : "Neema", id : 5}
+  ]
 
-      <PerformanceComercialAction>
-        {/* <div className="ActionHead">
+  return (
+    <TransferListContext.Provider value={data}>
+      <PerformanceComercialContainer>
+        <PerformanceComercialHeader>
+          {Array.from(buttons).map((item) => (
+            <button
+              key={item.title}
+              className={item.className}
+              onClick={(self) => handleChange({ self })}
+            >
+              {item.title}
+            </button>
+          ))}
+        </PerformanceComercialHeader>
+
+        <PerformanceComercialAction>
+          {/* <div className="ActionHead">
           <small>Mostrando Clientes</small>
         </div> */}
 
-        <div className="ActionBody">
-          <SearchBox />
-          <InputDate />
-          <div className="groupedButtons">
-            <SecondButtonIcon>
-              <Icon>
-                <BarChartOutlined />
-              </Icon>
-              Relatorio
-            </SecondButtonIcon>
+          <div className="ActionBody">
+            <SearchBox />
+            <InputDate />
+            <div className="groupedButtons">
+              <SecondButtonIcon>
+                <Icon>
+                  <BarChartOutlined />
+                </Icon>
+                Relatorio
+              </SecondButtonIcon>
 
-            <SecondButtonIcon>
-              <Icon>
-                <LocalPizzaOutlined />
-              </Icon>
-              Pizza
-            </SecondButtonIcon>
+              <SecondButtonIcon>
+                <Icon>
+                  <LocalPizzaOutlined />
+                </Icon>
+                Pizza
+              </SecondButtonIcon>
 
-            <SecondButtonIcon>
-              <Icon>
-                <PieChartOutline />
-              </Icon>
-              Graficos
-            </SecondButtonIcon>
+              <SecondButtonIcon>
+                <Icon>
+                  <PieChartOutline />
+                </Icon>
+                Graficos
+              </SecondButtonIcon>
+            </div>
           </div>
-        </div>
-      </PerformanceComercialAction>
+        </PerformanceComercialAction>
 
-      <PerformanceComercialBody>
-        <TransferList/>
-      </PerformanceComercialBody>
-    </PerformanceComercialContainer>
+        <PerformanceComercialBody>
+          <TransferList />
+        </PerformanceComercialBody>
+      </PerformanceComercialContainer>
+    </TransferListContext.Provider>
   );
 }
 
