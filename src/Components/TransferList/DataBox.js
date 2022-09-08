@@ -3,16 +3,22 @@ import React from "react";
 import { DataBoxWrapper } from "../../Styled/TransferList.styled";
 
 function DataBox(props) {
-
   //method to handleSelect
   function handleSelect({ item, self }) {
     const current = document.getElementsByClassName("selected");
     // If you click on the element add < select > className
-    if (current.length > 0) {
-      current[0].className = current[0].className.replace("selected", "");
+    if (!self.shiftKey) {
+      
+      if (current.length > 0) {
+        current[0].className = current[0].className.replace("selected", "");
+      }
+      self.target.className += " selected";
+      props.action([item]);
+
+    } else {
+      self.target.className += " selected";
+      props.action([...props.selected,item])
     }
-    self.target.className += " selected";
-    props.action([item]);
   }
   return (
     <DataBoxWrapper>
