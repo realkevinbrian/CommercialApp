@@ -4,7 +4,7 @@ import {
   PieChartOutline,
 } from "@mui/icons-material";
 import { Icon } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import InputDate from "../Components/Inputs/InputDate";
 import SearchBox from "../Components/Inputs/SearchBox";
 import { SecondButtonIcon } from "../Styled/Buttons.styled";
@@ -16,8 +16,11 @@ import {
 } from "../Styled/PerformanceComercial.styled";
 import TransferList from "../Components/TransferList";
 import { TransferListContext } from "../Context/TransferListContext";
+import TableReports from "../Components/PreviewReports/TableReports";
+import { useNavigate } from "react-router-dom";
 
 function PerformanceComercial() {
+  const navigate = useNavigate();
   const buttons = [
     { title: "Por Clientes", className: "activeResult" },
     { title: "Por Consultores" },
@@ -36,12 +39,13 @@ function PerformanceComercial() {
   }
 
   const data = [
-    {name : "Kevin Brian", id : 1},
-    {name : "Reis", id : 2},
-    {name : "Kito", id : 3},
-    {name : "Melaine", id : 4},
-    {name : "Neema", id : 5}
-  ]
+    { name: "Kevin Brian", id: 1 },
+    { name: "Reis", id: 2 },
+    { name: "Kito", id: 3 },
+    { name: "Melaine", id: 4 },
+    { name: "Neema", id: 5 },
+  ];
+
 
   return (
     <TransferListContext.Provider value={data}>
@@ -67,7 +71,7 @@ function PerformanceComercial() {
             <SearchBox />
             <InputDate />
             <div className="groupedButtons">
-              <SecondButtonIcon>
+              <SecondButtonIcon onClick={() => navigate("/desempenho/relatorio")}>
                 <Icon>
                   <BarChartOutlined />
                 </Icon>
