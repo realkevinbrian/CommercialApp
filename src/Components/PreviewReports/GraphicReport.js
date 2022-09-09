@@ -3,10 +3,13 @@ import { IconButton } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import {
+  Area,
   Bar,
   BarChart,
   CartesianGrid,
+  ComposedChart,
   Legend,
+  Line,
   Tooltip,
   XAxis,
   YAxis,
@@ -19,8 +22,8 @@ function GraphicReport() {
   const data = [
     {
       month: "Jan",
-      name: 4000,
-      valor: 2400,
+      name: 2000,
+      valor: 1400,
     },
     {
       month: "Fev",
@@ -66,7 +69,32 @@ function GraphicReport() {
         </div>
       </div>
       <div className="graphic">
-        <BarChart width={730} height={250} data={data}>
+        <ComposedChart width={730} height={250} data={data}>
+          <XAxis dataKey="month" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <CartesianGrid stroke="#f5f5f5" />
+          <Area
+            type="monotone"
+            dataKey="name"
+            fill="#8884d8"
+            stroke="#8884d8"
+          />
+          <Bar dataKey="name" barSize={20} fill="#413ea0" />
+          <Bar dataKey="name" barSize={20} fill="#41e43ea0" />
+          <Bar dataKey="name" barSize={20} fill="#4543ff" />
+          <Line type="monotone" dataKey="name" stroke="#45433f" />
+        </ComposedChart>
+      </div>
+    </GraphicReportContainer>
+  );
+}
+
+export default GraphicReport;
+
+{
+  /* <BarChart width={730} height={250} data={data}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="month" />
           <YAxis />
@@ -75,10 +103,5 @@ function GraphicReport() {
           <Bar dataKey="valor" fill="#8884d8" />
           <Bar dataKey="name" fill="#82ca9d" />
           <Bar dataKey="name" fill="#786262" />
-        </BarChart>
-      </div>
-    </GraphicReportContainer>
-  );
+        </BarChart> */
 }
-
-export default GraphicReport;

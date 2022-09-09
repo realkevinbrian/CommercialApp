@@ -6,7 +6,9 @@ import styled from "styled-components";
 
 export const PerformanceComercialContainer = styled.div`
   margin: 2rem;
-  background-color: ${({ theme }) => theme.colors.white};
+  /* background-color: ${({ theme }) => theme.colors.white}; */
+  background-color: #f2f2f2;
+
 `;
 export const PerformanceComercialHeader = styled.div`
   background-color: ${({ theme }) => theme.colors.raisinBlack};

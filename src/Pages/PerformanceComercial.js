@@ -46,7 +46,6 @@ function PerformanceComercial() {
     { name: "Neema", id: 5 },
   ];
 
-
   return (
     <TransferListContext.Provider value={data}>
       <PerformanceComercialContainer>
@@ -71,21 +70,25 @@ function PerformanceComercial() {
             <SearchBox />
             <InputDate />
             <div className="groupedButtons">
-              <SecondButtonIcon onClick={() => navigate("/desempenho/relatorio")}>
+              <SecondButtonIcon
+                onClick={() => navigate("/desempenho/relatorio")}
+              >
                 <Icon>
                   <BarChartOutlined />
                 </Icon>
                 Relatorio
               </SecondButtonIcon>
 
-              <SecondButtonIcon>
+              <SecondButtonIcon onClick={() => navigate("/desempenho/pizza")}>
                 <Icon>
                   <LocalPizzaOutlined />
                 </Icon>
                 Pizza
               </SecondButtonIcon>
 
-              <SecondButtonIcon onClick={() => navigate("/desempenho/graficos")}>
+              <SecondButtonIcon
+                onClick={() => navigate("/desempenho/graficos")}
+              >
                 <Icon>
                   <PieChartOutline />
                 </Icon>

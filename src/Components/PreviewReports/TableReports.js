@@ -4,12 +4,9 @@
 
 import { ArrowBack } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import { TableReportContainer } from "../../Styled/ReportPreview.style";
-import BackDrop from "../Mui_Components/BackDrop";
-import MuiTable from "../Mui_Components/MuiTable";
 import Table from "../Table";
-import useBack from "../../Helpers/useBack";
 import { useNavigate } from "react-router-dom";
 
 function TableReports(props) {

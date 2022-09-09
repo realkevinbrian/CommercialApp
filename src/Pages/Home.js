@@ -6,6 +6,8 @@ import { HomeContainer } from "../Styled/Home.styled";
 import ProtectedRoutes from "../Components/ProtectedRoutes";
 import TableReports from "../Components/PreviewReports/TableReports";
 import GraphicReport from "../Components/PreviewReports/GraphicReport";
+import PizzaChartReport from "../Components/PreviewReports/PizzaChartReport";
+
 
 function Home() {
   return (
@@ -18,6 +20,7 @@ function Home() {
           <Route path="desempenho" element={<PerformanceComercial />} />
           <Route path="desempenho/relatorio" element={<TableReports/>} />
           <Route path="desempenho/graficos" element={<GraphicReport/>} />
+          <Route path="desempenho/pizza" element={<PizzaChartReport/>} />
           <Route path="agence" element={<h2>Agence</h2>} />
           <Route path="projectos" element={<h2>Projectos</h2>} />
           <Route path="administrativa" element={<h1>Administrativa</h1>} />
