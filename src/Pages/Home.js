@@ -5,6 +5,7 @@ import PerformanceComercial from "./PerformanceComercial";
 import { HomeContainer } from "../Styled/Home.styled";
 import ProtectedRoutes from "../Components/ProtectedRoutes";
 import TableReports from "../Components/PreviewReports/TableReports";
+import GraphicReport from "../Components/PreviewReports/GraphicReport";
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
           <Route index element={<PerformanceComercial />} />
           <Route path="desempenho" element={<PerformanceComercial />} />
           <Route path="desempenho/relatorio" element={<TableReports/>} />
+          <Route path="desempenho/graficos" element={<GraphicReport/>} />
           <Route path="agence" element={<h2>Agence</h2>} />
           <Route path="projectos" element={<h2>Projectos</h2>} />
           <Route path="administrativa" element={<h1>Administrativa</h1>} />

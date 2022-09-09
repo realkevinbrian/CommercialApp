@@ -85,7 +85,7 @@ function PerformanceComercial() {
                 Pizza
               </SecondButtonIcon>
 
-              <SecondButtonIcon>
+              <SecondButtonIcon onClick={() => navigate("/desempenho/graficos")}>
                 <Icon>
                   <PieChartOutline />
                 </Icon>

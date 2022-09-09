@@ -32,6 +32,7 @@ function TransferList() {
     const diff = _.differenceBy(ParentList, selected, "name");
     setParentList(diff);
     setChildList(_.unionBy(ChildList, selected));
+    setSelected([]);
   }
 
   //method to backward list
@@ -43,6 +44,7 @@ function TransferList() {
     const diff = _.differenceBy(ChildList, selected, "name");
     setChildList(diff);
     setParentList(_.unionBy(ParentList, selected));
+    setSelected([]);
   }
 
   return (
